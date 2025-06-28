@@ -1,0 +1,10 @@
+services:
+  ucg-api:
+    image: ucg-api
+    container_name: ucg-api-instance
+    ports:
+      - "8000:8000"  #or replace your favorite port
+    environment:
+      API_KEY: "your-api-key" #you api generated from ubiquiti router
+      UGW_API_URL: "https://xx.xx.xx.xx./proxy/network/api/s/default/stat/health" # replace your ip or route from the api
+    restart: unless-stopped
